@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:background="@color/bg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginVertical="40dp"
+            android:text="Решение:"
+            android:textColor="@color/turquoise_900"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/discriminant_decision"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/turquoise_900"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="D = b\u00B2 - 4ac" />
+
+        <TextView
+            android:id="@+id/disc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/turquoise_900"
+            android:textSize="30sp"
+            android:text="D = " />
+
+        <Button
+            android:id="@+id/back_to_main"
+            style="@style/Widget.MaterialComponents.Button"
+
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="130dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/turquoise_400"
+            android:text="Назад"
+            android:textSize="20sp"
+            android:drawableTop="@android:drawable/arrow_up_float"/>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CalculationFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/head_equation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="40dp"
+                    android:gravity="center"
+                    android:text="ax\u00B2 + bx + c = 0"
+                    android:textSize="45sp"
+                    android:textColor="@color/turquoise_900" />
+
+
+
+                <EditText
+            android:id="@+id/text_input_A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                    android:layout_below="@+id/head_equation"
+            android:layout_marginHorizontal="50dp"
+
+            android:ems="10"
+            android:hint="Введите параметр А"
+            android:inputType="number"
+            android:minHeight="55dp"
+            tools:ignore="DuplicateClickableBoundsCheck" />
+
+
+        <EditText
+            android:id="@+id/text_input_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_input_A"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Введите параметр В"
+            android:inputType="number"
+            android:minHeight="55dp"
+            />
+
+
+        <EditText
+            android:id="@+id/text_input_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_input_B"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Введите параметр С"
+            android:inputType="number"
+            android:minHeight="55dp"
+            />
+
+                <TextView
+                    android:id="@+id/discriminant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_below="@+id/text_input_C"
+                    android:text="Дискриминант:"
+                    android:textColor="@color/turquoise_600"
+                    android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_below="@+id/discriminant"
+            android:text="Корни уравнения:"
+            android:textColor="@color/turquoise_600"
+            android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_calculation"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/result"
+                    android:layout_marginStart="50sp"
+                    android:onClick="saveData"
+                    android:text="Вычислить" />
+
+                <Button
+                    android:id="@+id/btn_details"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/result"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="50sp"
+                    android:layout_marginStart="60sp"
+                    android:onClick="getData"
+                    android:text="Подробнее" />
+
+
+        </RelativeLayout>
+</FrameLayout>
+
+
+
