@@ -9,11 +9,13 @@ public class CalculationPresenter {
     Double varA;
     Double varB;
     Double varC;
-    String discriminant;
+    Double discriminant;
+    Double sqrt1, sqrt2;
+    String result;
     String headEquation;
     CalculationFragment view;
     FragmentRouter fragmentRouter;
-    CalculationDetailsModel calculationDetailsModel;
+    CalculationDetailsModel calculationDetailsModel1;
     DecimalFormat decimalFormat = new DecimalFormat("0.#");
 
     public CalculationPresenter(FragmentRouter fragmentRouter, CalculationFragment view) {
@@ -32,11 +34,36 @@ public class CalculationPresenter {
             this.varA = Double.parseDouble(varA);
             this.varB = Double.parseDouble(varB);
             this.varC = Double.parseDouble(varC);
-            discriminant = decimalFormat.format(
+            discriminant = (
                     this.varB * this.varB - 4 * this.varA * this.varC
             );
+
+            if (discriminant > 0){
+                sqrt1 = (-this.varB + Math.sqrt(discriminant)/ (2 * this.varA));
+                sqrt2 = (-this.varB - Math.sqrt(discriminant)/ (2 * this.varA));
+                result = String.format("X1 = %s, X2 = %s",  decimalFormat.format(sqrt1), decimalFormat.format(sqrt2));
+
+
+
+            }
+            else if (discriminant == 0){
+                sqrt1 = (-this.varB / (2 * this.varA));
+                sqrt2 = 0.0;
+                result = String.format("X = %s",  decimalFormat.format(sqrt1));
+            }
+            else {
+                result = "Корней нет, D < 0";
+                sqrt1 = 0.0;
+                sqrt2 = 0.0;
+                }
+
+
             saveVar();
-            view.showDisc(discriminant);
+
+
+
+            view.showDisc(String.format("D = %s", decimalFormat.format(discriminant)));
+            view.showResult(result);
             headEquation = String.format(
                     "%sx\u00B2 + %sx + %s = 0",
                     decimalFormat.format(this.varA),
@@ -48,15 +75,19 @@ public class CalculationPresenter {
     }
 
     public void onDetailedClicked() {
-        fragmentRouter.showFragmentDetails(calculationDetailsModel);
+        fragmentRouter.showFragmentDetails(calculationDetailsModel1);
     }
 
     private void saveVar() {
-        calculationDetailsModel = new CalculationDetailsModel(
+        calculationDetailsModel1 = new CalculationDetailsModel(
                 decimalFormat.format(varA),
                 decimalFormat.format(varB),
                 decimalFormat.format(varC),
-                discriminant
+                decimalFormat.format(discriminant),
+                decimalFormat.format(sqrt1),
+                decimalFormat.format(sqrt2),
+                result
+
         );
     }
 }

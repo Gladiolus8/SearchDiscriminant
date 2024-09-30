@@ -20,16 +20,16 @@ import com.example.searchdiscriminant.R;
 public class CalculationFragment extends Fragment {
 
 
-
     EditText varA;
     EditText varB;
     EditText varC;
     TextView discriminant;
+    TextView result;
     TextView headEquation;
     Button btnCalculate;
     Button btnDetailed;
+    CalculationPresenter presenter;
     public static final String TAG = "CalculationFragment";
-
 
     @Override
     public View onCreateView(
@@ -44,31 +44,64 @@ public class CalculationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         varA = getView().findViewById(R.id.text_input_A);
         varB = getView().findViewById(R.id.text_input_B);
         varC = getView().findViewById(R.id.text_input_C);
         discriminant = getView().findViewById(R.id.discriminant);
+        result = getView().findViewById(R.id.result);
         btnCalculate = getView().findViewById(R.id.btn_calculation);
         btnDetailed = getView().findViewById(R.id.btn_details);
         headEquation = getView().findViewById(R.id.head_equation);
 
+
+
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onCalculateClicked(
+                        varA.getText().toString(),
+                        varB.getText().toString(),
+                        varC.getText().toString()
+                );
+            }
+        });
+
+        btnDetailed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onDetailedClicked();
+            }
+        });
+
     }
 
-
-
+    public void setPresenter(CalculationPresenter presenter) {
+        this.presenter = presenter;
+    }
 
     public void showEmptyFieldError() {
+        discriminant.setText("Ошибка, поля не могут быть пусты");
     }
 
-    public void showDisc(String discriminant) {
+    public void showDisc(String disc) {
+        discriminant.setText(disc);
+    }
+
+    public void showResult(String res) {
+        result.setText(res);
     }
 
     public void showHeadEquation(String headEquation) {
+        this.headEquation.setText(headEquation);
     }
 
     public void showIncorrectInputNum() {
+        discriminant.setText("Ошибка, введён неверный символ");
     }
 
-    public void setPresenter(CalculationPresenter calcPresenter) {
-    }
+
+
+
+
 }

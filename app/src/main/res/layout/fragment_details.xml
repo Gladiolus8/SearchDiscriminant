@@ -13,6 +13,7 @@
         android:background="@color/bg">
 
         <TextView
+            android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -22,7 +23,7 @@
             android:textSize="45sp" />
 
         <TextView
-            android:id="@+id/discriminant_decision"
+            android:id="@+id/discriminant_find"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/turquoise_900"
@@ -40,8 +41,28 @@
             android:textSize="30sp"
             android:text="D = " />
 
+        <TextView
+            android:id="@+id/sqrt_find"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/turquoise_900"
+            android:textSize="30sp"
+            android:text="X = (-b \u00B1 \u221AD) / 2a" />
+
+        <TextView
+            android:id="@+id/sqrt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/turquoise_900"
+            android:textSize="30sp"
+            android:text="X = " />
+
         <Button
-            android:id="@+id/back_to_main"
+            android:id="@+id/btn_back"
             style="@style/Widget.MaterialComponents.Button"
 
             android:layout_width="150dp"
