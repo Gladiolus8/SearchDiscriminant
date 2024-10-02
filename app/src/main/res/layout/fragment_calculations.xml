@@ -6,9 +6,12 @@
     tools:context=".fragments.CalculationFragment">
 
 
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            >
 
 
                 <TextView
@@ -29,12 +32,14 @@
             android:layout_height="wrap_content"
                     android:layout_below="@+id/head_equation"
             android:layout_marginHorizontal="50dp"
+                    android:textColor="@color/turquoise_900"
 
             android:ems="10"
             android:hint="Введите параметр А"
-            android:inputType="number"
+            android:textColorHint="@color/turquoise_400"
+            android:inputType="numberDecimal|numberSigned"
             android:minHeight="55dp"
-            tools:ignore="DuplicateClickableBoundsCheck" />
+             />
 
 
         <EditText
@@ -45,9 +50,11 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="20dp"
             android:ems="10"
+            android:textColor="@color/turquoise_900"
             android:gravity="start|top"
             android:hint="Введите параметр В"
-            android:inputType="number"
+            android:textColorHint="@color/turquoise_400"
+            android:inputType="numberDecimal|numberSigned"
             android:minHeight="55dp"
             />
 
@@ -60,8 +67,10 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="20dp"
             android:ems="10"
+            android:textColor="@color/turquoise_900"
             android:hint="Введите параметр С"
-            android:inputType="number"
+            android:textColorHint="@color/turquoise_400"
+            android:inputType="numberDecimal|numberSigned"
             android:minHeight="55dp"
             />
 
@@ -109,6 +118,7 @@
                     android:layout_marginEnd="50sp"
                     android:layout_marginStart="60sp"
                     android:onClick="getData"
+                    android:visibility="gone"
                     android:text="Подробнее" />
 
 

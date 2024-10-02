@@ -1,8 +1,12 @@
 package com.example.searchdiscriminant.fragments;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.searchdiscriminant.presenters.CalculationPresenter;
+
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +23,8 @@ import com.example.searchdiscriminant.R;
 
 public class CalculationFragment extends Fragment {
 
+
+    Context context  = getContext();
 
     EditText varA;
     EditText varB;
@@ -81,11 +87,15 @@ public class CalculationFragment extends Fragment {
     }
 
     public void showEmptyFieldError() {
-        discriminant.setText("Ошибка, поля не могут быть пусты");
+
+        discriminant.setTextColor(Color.parseColor("#D32D2D"));
+
+        discriminant.setText("Ошибка, поля не могут быть пусты!");
     }
 
     public void showDisc(String disc) {
         discriminant.setText(disc);
+        btnDetailed.setVisibility(View.VISIBLE);
     }
 
     public void showResult(String res) {
@@ -98,6 +108,7 @@ public class CalculationFragment extends Fragment {
 
     public void showIncorrectInputNum() {
         discriminant.setText("Ошибка, введён неверный символ");
+        discriminant.setTextColor(Color.parseColor("#D32D2D"));
     }
 
 

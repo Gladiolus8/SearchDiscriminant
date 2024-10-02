@@ -6,5 +6,6 @@
     <color name="turquoise_400">#09ED9F</color>
     <color name="turquoise_600">#1E9E72</color>
     <color name="bg">#f1f1f1</color>
+    <color name="error">#D32D2D</color>
 
 </resources>

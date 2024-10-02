@@ -32,8 +32,7 @@ public class DetailsPresenter {
                 calculationDetailsModel = model;
 
                 
-//
-//                view.showTest(calculationDetailsModel.varA);
+
         }
 
 
@@ -44,19 +43,19 @@ public class DetailsPresenter {
                 getVar();
 
                 equationDisc = String.format("D = %s\u00B2 - 4 \u00D7 %s \u00D7 %s", varB, varA, varC);
-                discriminant = String.format("D = %s", discriminant);
+
                 if (result.equals("Корней нет, D < 0")){
                         view.hidingText();
                         equationSqrt = "";
                 }
                 else if (discriminant.equals("0")) {
-                        equationSqrt = String.format("X = -%s / 2%s ", varB, varA);
+                        equationSqrt = String.format("X = -%s / 2 \u00D7 %s ", varB, varA);
 
                 }
                 else {
-                        equationSqrt = String.format("X = (-%s \u00B1 \u221AD) / 2%s ", varB, varA);
+                        equationSqrt = String.format("X = (-%s \u00B1 \u221A%s) / 2 \u00D7 %s ", varB,discriminant, varA);
                 }
-
+                discriminant = String.format("D = %s", discriminant);
                 view.showEquation(equationDisc, discriminant, equationSqrt, result);
 
         }

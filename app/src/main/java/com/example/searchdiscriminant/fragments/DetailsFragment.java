@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.example.searchdiscriminant.R;
+import com.example.searchdiscriminant.model.CalculationDetailsModel;
 import com.example.searchdiscriminant.presenters.DetailsPresenter;
 
 public class DetailsFragment extends Fragment {
@@ -23,7 +24,7 @@ public class DetailsFragment extends Fragment {
     DetailsPresenter presenter;
     public static final String TAG = "DetailsFragment";
 
-    TextView test;
+
 
 
 
@@ -48,9 +49,9 @@ public class DetailsFragment extends Fragment {
             sqrtX = getView().findViewById(R.id.sqrt);
             btnBack = getView().findViewById(R.id.btn_back);
 
-        test = getView().findViewById(R.id.test);
 
-//        presenter.creatingEquation();
+
+        presenter.creatingEquation();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +68,12 @@ public class DetailsFragment extends Fragment {
 
 
     public void setPresenter(DetailsPresenter detailsPresenter) {
-        this.presenter = presenter;
+        this.presenter = detailsPresenter;
+    }
+
+    public void uppdateData(CalculationDetailsModel calculationDetailsModel) {
+        presenter.updateData(calculationDetailsModel);
+
     }
 
 
@@ -78,12 +84,10 @@ public class DetailsFragment extends Fragment {
         sqrtX.setText(sqrt);
     }
 
-    public void showTest(String test1){
-        test.setText(test1);
-    }
+
 
     public void  hidingText() {
-//        sqrtX.setVisibility(View.GONE);
+
         sqrtFinding.setVisibility(View.GONE);
     }
 

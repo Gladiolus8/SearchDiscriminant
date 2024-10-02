@@ -35,10 +35,13 @@ public class FragmentRouter {
             fragment = new DetailsFragment();
             DetailsPresenter detailsPresenter = new DetailsPresenter(this, fragment);
             fragment.setPresenter(detailsPresenter);
-            detailsPresenter.updateData(calculationDetailsModel);
+
         }
         showFragment(fragment, DetailsFragment.TAG);
+        fragment.uppdateData(calculationDetailsModel);
     }
+
+
 
     private void showFragment(Fragment fragment, String tag) {
         manager.beginTransaction()
