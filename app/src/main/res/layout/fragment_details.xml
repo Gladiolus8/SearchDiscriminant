@@ -9,18 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
-        android:background="@color/bg">
+        android:background="@color/bg"
+    >
 
         <TextView
-            android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginVertical="40dp"
-            android:text="Решение:"
+            android:layout_marginVertical="@dimen/head_margin_vertical"
+            android:text="@string/decision"
             android:textColor="@color/turquoise_900"
-            android:textSize="45sp" />
+            android:textSize="@dimen/head_text_size"
+        />
 
         <TextView
             android:id="@+id/discriminant_find"
@@ -28,52 +28,52 @@
             android:layout_height="wrap_content"
             android:textColor="@color/turquoise_900"
             android:gravity="center"
-            android:textSize="30sp"
-            android:text="D = b\u00B2 - 4ac" />
+            android:textSize="@dimen/detail_disc_text"
+            android:text="@string/discriminant_find"
+        />
 
         <TextView
             android:id="@+id/disc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/input_margin_top"
             android:gravity="center"
             android:textColor="@color/turquoise_900"
-            android:textSize="30sp"
-            android:text="D = " />
+            android:textSize="@dimen/detail_disc_text"
+            android:text="@string/d"
+        />
 
         <TextView
             android:id="@+id/sqrt_find"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/input_margin_top"
             android:gravity="center"
             android:textColor="@color/turquoise_900"
-            android:textSize="30sp"
-            android:text="X = (-b \u00B1 \u221AD) / 2a" />
+            android:textSize="@dimen/detail_disc_text"
+            android:text="@string/sqrt_find"
+        />
 
         <TextView
             android:id="@+id/sqrt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/input_margin_top"
             android:gravity="center"
             android:textColor="@color/turquoise_900"
-            android:textSize="30sp"
-            android:text="X = " />
+            android:textSize="@dimen/detail_disc_text"
+            android:text="@string/sqrt"
+        />
 
         <Button
             android:id="@+id/btn_back"
-            style="@style/Widget.MaterialComponents.Button"
-
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="40dp"
+            android:layout_width="@dimen/btn_back_width"
+            android:layout_height="@dimen/btn_back_height"
+            android:layout_marginTop="@dimen/btn_back_margin_top"
             android:backgroundTint="@color/turquoise_400"
-            android:text="Назад"
+            android:text="@string/btn_back"
             android:layout_gravity="center"
-            android:textSize="20sp"
-            android:drawableTop="@android:drawable/arrow_up_float"/>
-
+            android:textSize="@dimen/result_text_size"
+        />
     </LinearLayout>
 </FrameLayout>

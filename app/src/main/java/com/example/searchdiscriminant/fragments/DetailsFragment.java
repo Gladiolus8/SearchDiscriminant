@@ -24,11 +24,6 @@ public class DetailsFragment extends Fragment {
     DetailsPresenter presenter;
     public static final String TAG = "DetailsFragment";
 
-
-
-
-
-
     @Override
     public View onCreateView(
             LayoutInflater inflater,
@@ -41,41 +36,19 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-            discFinding = getView().findViewById(R.id.discriminant_find);
-            discriminant = getView().findViewById(R.id.disc);
-            sqrtFinding = getView().findViewById(R.id.sqrt_find);
-            sqrtX = getView().findViewById(R.id.sqrt);
-            btnBack = getView().findViewById(R.id.btn_back);
-
-
-
+        initViews();
         presenter.creatingEquation();
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.onBackClicked();
-            }
-        });
-
-
-
+        ClickListener();
     }
-
-
-
 
     public void setPresenter(DetailsPresenter detailsPresenter) {
         this.presenter = detailsPresenter;
     }
 
-    public void uppdateData(CalculationDetailsModel calculationDetailsModel) {
+    public void updateData(CalculationDetailsModel calculationDetailsModel) {
         presenter.updateData(calculationDetailsModel);
 
     }
-
 
     public void showEquation(String equationDisc, String disc, String equationSqrt, String sqrt) {
         discFinding.setText(equationDisc);
@@ -84,13 +57,26 @@ public class DetailsFragment extends Fragment {
         sqrtX.setText(sqrt);
     }
 
-
-
     public void  hidingText() {
-
         sqrtFinding.setVisibility(View.GONE);
     }
 
+    private void initViews() {
+        if (getView() != null) {
+            discFinding = getView().findViewById(R.id.discriminant_find);
+            discriminant = getView().findViewById(R.id.disc);
+            sqrtFinding = getView().findViewById(R.id.sqrt_find);
+            sqrtX = getView().findViewById(R.id.sqrt);
+            btnBack = getView().findViewById(R.id.btn_back);
+        }
+    }
 
-
+    private void ClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onBackClicked();
+            }
+        });
+    }
 }

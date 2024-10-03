@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">search_discrininant</string>
-
+    <string name="incorrect_input_num">Ошибка, введён неверный символ!</string>
+    <string name="empty_field_error">Ошибка, поля не могут быть пусты!</string>
+    <string name="head_equation">ax\u00B2 + bx + c = 0</string>
+    <string name="text_input_A">Введите параметр А</string>
+    <string name="text_input_B">Введите параметр B</string>
+    <string name="text_input_C">Введите параметр C</string>
+    <string name="discriminant">Дискриминант: </string>
+    <string name="result">Корни уравнения: </string>
+    <string name="calculate">Вычислить</string>
+    <string name="detailed">Подробнее</string>
+    <string name="decision">Решение:</string>
+    <string name="discriminant_find">D = b\u00B2 - 4ac</string>
+    <string name="d">D = </string>
+    <string name="sqrt_find">X = (-b \u00B1 \u221AD) / 2a</string>
+    <string name="sqrt">X = </string>
+    <string name="btn_back">Назад</string>
 </resources>

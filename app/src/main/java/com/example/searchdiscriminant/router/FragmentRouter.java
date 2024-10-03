@@ -38,10 +38,8 @@ public class FragmentRouter {
 
         }
         showFragment(fragment, DetailsFragment.TAG);
-        fragment.uppdateData(calculationDetailsModel);
+        fragment.updateData(calculationDetailsModel);
     }
-
-
 
     private void showFragment(Fragment fragment, String tag) {
         manager.beginTransaction()

@@ -37,14 +37,10 @@ public class CalculationPresenter {
             discriminant = (
                     this.varB * this.varB - 4 * this.varA * this.varC
             );
-
             if (discriminant > 0){
                 sqrt1 = (-this.varB + Math.sqrt(discriminant)/ (2 * this.varA));
                 sqrt2 = (-this.varB - Math.sqrt(discriminant)/ (2 * this.varA));
                 result = String.format("X1 = %s, X2 = %s",  decimalFormat.format(sqrt1), decimalFormat.format(sqrt2));
-
-
-
             }
             else if (discriminant == 0){
                 sqrt1 = (-this.varB / (2 * this.varA));
@@ -52,16 +48,12 @@ public class CalculationPresenter {
                 result = String.format("X = %s",  decimalFormat.format(sqrt1));
             }
             else {
+                //result = "Корней нет, D < 0";
                 result = "Корней нет, D < 0";
                 sqrt1 = 0.0;
                 sqrt2 = 0.0;
                 }
-
-
             saveVar();
-
-
-
             view.showDisc(String.format("D = %s", decimalFormat.format(discriminant)));
             view.showResult(result);
             headEquation = String.format(
@@ -87,7 +79,6 @@ public class CalculationPresenter {
                 decimalFormat.format(sqrt1),
                 decimalFormat.format(sqrt2),
                 result
-
         );
     }
 }

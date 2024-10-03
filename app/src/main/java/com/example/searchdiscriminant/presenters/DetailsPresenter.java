@@ -8,7 +8,6 @@ import com.example.searchdiscriminant.router.FragmentRouter;
 
 public class DetailsPresenter {
 
-
         DetailsFragment view;
         FragmentRouter fragmentRouter;
         String varA;
@@ -22,7 +21,6 @@ public class DetailsPresenter {
         String result;
         CalculationDetailsModel calculationDetailsModel;
 
-
         public DetailsPresenter(FragmentRouter fragmentRouter, DetailsFragment view) {
         this.fragmentRouter = fragmentRouter;
         this.view = view;
@@ -30,34 +28,23 @@ public class DetailsPresenter {
 
         public void updateData(CalculationDetailsModel model) {
                 calculationDetailsModel = model;
-
-                
-
         }
 
-
-
-
         public void creatingEquation() {
-
                 getVar();
-
                 equationDisc = String.format("D = %s\u00B2 - 4 \u00D7 %s \u00D7 %s", varB, varA, varC);
-
                 if (result.equals("Корней нет, D < 0")){
                         view.hidingText();
                         equationSqrt = "";
                 }
                 else if (discriminant.equals("0")) {
                         equationSqrt = String.format("X = -%s / 2 \u00D7 %s ", varB, varA);
-
                 }
                 else {
                         equationSqrt = String.format("X = (-%s \u00B1 \u221A%s) / 2 \u00D7 %s ", varB,discriminant, varA);
                 }
                 discriminant = String.format("D = %s", discriminant);
                 view.showEquation(equationDisc, discriminant, equationSqrt, result);
-
         }
 
         public void onBackClicked() {
@@ -73,6 +60,5 @@ public class DetailsPresenter {
                 sqrt2 = calculationDetailsModel.sqrt2;
                 result = calculationDetailsModel.result;
         }
-
     }
 

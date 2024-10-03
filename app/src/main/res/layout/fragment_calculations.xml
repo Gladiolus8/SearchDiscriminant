@@ -5,123 +5,117 @@
     android:layout_height="match_parent"
     tools:context=".fragments.CalculationFragment">
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bg"
-            >
-
+        >
 
                 <TextView
                     android:id="@+id/head_equation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="40dp"
+                    android:layout_marginVertical="@dimen/head_margin_vertical"
                     android:gravity="center"
-                    android:text="ax\u00B2 + bx + c = 0"
-                    android:textSize="45sp"
-                    android:textColor="@color/turquoise_900" />
+                    android:text="@string/head_equation"
+                    android:textSize="@dimen/head_text_size"
+                    android:textColor="@color/turquoise_900"
+                />
 
+                <EditText
+                    android:id="@+id/text_input_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/head_equation"
+                    android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+                    android:textColor="@color/turquoise_900"
+                    android:ems="10"
+                    android:hint="@string/text_input_A"
+                    android:textColorHint="@color/turquoise_400"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:minHeight="@dimen/input_min_height"
+                />
+
+                <EditText
+                    android:id="@+id/text_input_B"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_input_A"
+                    android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:ems="10"
+                    android:textColor="@color/turquoise_900"
+                    android:gravity="start|top"
+                    android:hint="@string/text_input_B"
+                    android:textColorHint="@color/turquoise_400"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:minHeight="@dimen/input_min_height"
+                />
 
 
                 <EditText
-            android:id="@+id/text_input_A"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-                    android:layout_below="@+id/head_equation"
-            android:layout_marginHorizontal="50dp"
+                    android:id="@+id/text_input_C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_input_B"
+                    android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:ems="10"
                     android:textColor="@color/turquoise_900"
-
-            android:ems="10"
-            android:hint="Введите параметр А"
-            android:textColorHint="@color/turquoise_400"
-            android:inputType="numberDecimal|numberSigned"
-            android:minHeight="55dp"
-             />
-
-
-        <EditText
-            android:id="@+id/text_input_B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_input_A"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:textColor="@color/turquoise_900"
-            android:gravity="start|top"
-            android:hint="Введите параметр В"
-            android:textColorHint="@color/turquoise_400"
-            android:inputType="numberDecimal|numberSigned"
-            android:minHeight="55dp"
-            />
-
-
-        <EditText
-            android:id="@+id/text_input_C"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_input_B"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:textColor="@color/turquoise_900"
-            android:hint="Введите параметр С"
-            android:textColorHint="@color/turquoise_400"
-            android:inputType="numberDecimal|numberSigned"
-            android:minHeight="55dp"
-            />
+                    android:hint="@string/text_input_C"
+                    android:textColorHint="@color/turquoise_400"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:minHeight="@dimen/input_min_height"
+                />
 
                 <TextView
                     android:id="@+id/discriminant"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="50dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="@dimen/result_margin_horizontal"
+                    android:layout_marginTop="@dimen/result_margin_top"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_below="@+id/text_input_C"
-                    android:text="Дискриминант:"
+                    android:text="@string/discriminant"
                     android:textColor="@color/turquoise_600"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/result_text_size"
+                />
 
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:layout_below="@+id/discriminant"
-            android:text="Корни уравнения:"
-            android:textColor="@color/turquoise_600"
-            android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/result_margin_horizontal"
+                    android:layout_marginTop="@dimen/result_margin_top"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_below="@+id/discriminant"
+                    android:text="@string/result"
+                    android:textColor="@color/turquoise_600"
+                    android:textSize="@dimen/result_text_size"
+                />
 
                 <Button
                     android:id="@+id/btn_calculation"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/calc_button_margin_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/result"
-                    android:layout_marginStart="50sp"
-                    android:onClick="saveData"
-                    android:text="Вычислить" />
+                    android:layout_marginStart="@dimen/calc_button_margin_start"
+                    android:text="@string/calculate"
+                />
 
                 <Button
                     android:id="@+id/btn_details"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/calc_button_margin_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/result"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="50sp"
-                    android:layout_marginStart="60sp"
-                    android:onClick="getData"
+                    android:layout_marginEnd="@dimen/calc_button_margin_end"
+                    android:layout_marginStart="@dimen/calc_button_margin_start"
                     android:visibility="gone"
-                    android:text="Подробнее" />
-
-
+                    android:text="@string/detailed"
+                />
         </RelativeLayout>
 </FrameLayout>
 
