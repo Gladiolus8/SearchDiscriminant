@@ -47,7 +47,7 @@ public class CalculationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViews();
-        ClickListener();
+        clickListener();
     }
 
     public void setPresenter(CalculationPresenter presenter) {
@@ -74,7 +74,7 @@ public class CalculationFragment extends Fragment {
         discriminant.setTextColor(ContextCompat.getColor(this.getContext(), R.color.error));
     }
 
-    private void ClickListener() {
+    private void clickListener() {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +106,4 @@ public class CalculationFragment extends Fragment {
             headEquation = getView().findViewById(R.id.head_equation);
         }
     }
-
-
-
 }

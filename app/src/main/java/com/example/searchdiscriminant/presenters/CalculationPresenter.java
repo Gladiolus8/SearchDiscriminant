@@ -48,7 +48,6 @@ public class CalculationPresenter {
                 result = String.format("X = %s",  decimalFormat.format(sqrt1));
             }
             else {
-                //result = "Корней нет, D < 0";
                 result = "Корней нет, D < 0";
                 sqrt1 = 0.0;
                 sqrt2 = 0.0;
